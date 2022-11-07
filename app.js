@@ -1,6 +1,7 @@
 var button = document.querySelector('button')
 var input = document.querySelector('textarea')
+var output = document.querySelector('.output')
 
 button.addEventListener("click", function (){
-  console.log(input.value)
+  output.innerText = input.value
 })
