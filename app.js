@@ -1,7 +1,17 @@
 var button = document.querySelector('button')
-var input = document.querySelector('textarea')
-var output = document.querySelector('.output')
+var txtInput = document.querySelector('textarea')
+var outputDiv = document.querySelector('.output')
+var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
-button.addEventListener("click", function (){
-  output.innerText = input.value
-})
+function getTranslationURL(text) {
+  return serverURL + "?" + "text=" + text
+}
+
+function clickHandler(){
+  var input = txtInput.value
+  fetch(getTranslationURL(input))
+  .then(response => response.json())
+  .then(json => outputDiv.innerText = (json.contents.translated))
+}
+
+button.addEventListener("click", clickHandler)
