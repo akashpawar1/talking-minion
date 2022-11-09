@@ -44,6 +44,8 @@ hr {
 
 textarea {
   display: block;
+  margin: auto;
+  height: auto;
 }
 
 /*------- button --------*/
